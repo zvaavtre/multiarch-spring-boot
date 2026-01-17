@@ -18,12 +18,12 @@ build: jar
 	# For this to work you need to run `docker buildx create --name multi --use` to get a builder setup
     # Docker desktop has everything you need for this to work, on linux server you'll need to
     # configure qemu and a few other things.
-	docker buildx build --platform linux/arm64,linux/amd64 --tag spring-demo --push .
+	docker buildx build --platform linux/arm64,linux/amd64 --tag zvaavtre/spring-demo:latest --push .
 
 
 build-arm-load: jar
 	# For single platform you can load it into image cache.
-	docker buildx build --platform linux/arm64 --tag spring-demo --load .
+	docker buildx build --platform linux/arm64 --tag zvaavtre/spring-demo:local --load .
 	$(info "Docker image for arm64 loaded into local repo. `docker image ls` to see it.")
 
 
