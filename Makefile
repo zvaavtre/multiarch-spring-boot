@@ -18,7 +18,7 @@ build: jar
 	# For this to work you need to run `docker buildx create --name multi --use` to get a builder setup
     # Docker desktop has everything you need for this to work, on linux server you'll need to
     # configure qemu and a few other things.
-	docker buildx build --platform linux/arm64,linux/amd64 --tag spring-demo --push .
+	docker buildx build --platform linux/arm64,linux/amd64 --tag spring-demo --load .
 
 
 build-arm-load: jar
