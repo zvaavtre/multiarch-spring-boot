@@ -43,10 +43,10 @@ clean: mvn-clean buildx-clean
 
 run-example:
 	# See the docker.env for a good way to load env vars
-	docker run -p 8080:8080 --env-file docker.env --rm --name spring-demo spring-demo
+	docker run -p 8080:8080 --env-file docker.env --rm --name spring-demo zvaavtre/spring-demo:latest
 
 
 print-final-flags:
 	# Run with the same props and print out final settings... for debuggin.
-	docker run --entrypoint java --env-file docker.env --rm --name spring-demo spring-demo -XX:+PrintFlagsFinal -version
+	docker run --entrypoint java --env-file docker.env --rm --name spring-demo zvaavtre/spring-demo:latest -XX:+PrintFlagsFinal -version
 
